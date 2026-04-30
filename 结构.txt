@@ -1,0 +1,18 @@
+voice_input_app/
+├── lib/
+│   ├── main.dart                    # 应用入口
+│   ├── screens/
+│   │   └── home_screen.dart         # 主界面
+│   ├── services/
+│   │   └── whisper_service.dart     # Whisper语音识别服务
+│   ├── models/
+│   │   └── transcription_model.dart # 数据模型
+│   └── utils/
+│       └── file_utils.dart          # 文件工具（LRC/SRT导出）
+├── android/
+│   └── app/
+│       └── src/main/AndroidManifest.xml
+├── assets/
+│   └── models/                      # 存放下载的Whisper模型
+├── pubspec.yaml
+└── README.md
