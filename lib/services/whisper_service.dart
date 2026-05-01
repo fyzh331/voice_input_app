@@ -109,6 +109,9 @@ class WhisperService {
         return 'ggml-medium.bin';
       case WhisperModel.none:
         return '';
+        default:
+      // 如果遇到未定义的模型，可以返回一个默认文件名或抛出异常
+      return 'ggml-base.bin';
     }
   }
   
