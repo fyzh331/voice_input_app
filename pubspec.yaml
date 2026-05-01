@@ -1,7 +1,7 @@
 name: voice_input_app
-description: 离线语音输入法 - 支持国语/粤语/英文
-version: 1.0.0
+description: A new Flutter project.
 publish_to: 'none'
+version: 1.0.0+1
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -9,32 +9,23 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  
-  # Whisper 离线语音识别
-  whisper_kit: ^0.3.0
-  
-  # 权限管理
-  permission_handler: ^11.0.0
-  
-  # 文件操作
-  path_provider: ^2.1.0
-  
-  # 音频录制
+
+  # 使用最新稳定版的 record 插件
   record: ^5.0.0
+  # 如果需要，可以显式排除 record_linux（但不需要，新版 record 已修复）
   
-  # 状态管理
-  provider: ^6.1.0
-  
-  # 图标
-  cupertino_icons: ^1.0.6
+  permission_handler: ^11.0.0
+  path_provider: ^2.1.0
+  speech_to_text: ^6.6.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
 
+# 强制统一 record_platform_interface 的版本，避免接口不匹配
+dependency_overrides:
+  record_platform_interface: ^1.5.0
+
 flutter:
   uses-material-design: true
-  
-  assets:
-    - assets/models/
