@@ -10,10 +10,11 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # 添加缺失的 whisper_kit 依赖，这是解决构建失败的关键
+  whisper_kit: ^0.3.0
+
   # 使用最新稳定版的 record 插件
   record: ^5.0.0
-  # 如果需要，可以显式排除 record_linux（但不需要，新版 record 已修复）
-  
   permission_handler: ^11.0.0
   path_provider: ^2.1.0
   speech_to_text: ^6.6.0
@@ -23,7 +24,7 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^3.0.0
 
-# 强制统一 record_platform_interface 的版本，避免接口不匹配
+# 强制统一 record_platform_interface 的版本，解决接口不匹配的问题
 dependency_overrides:
   record_platform_interface: ^1.5.0
 
